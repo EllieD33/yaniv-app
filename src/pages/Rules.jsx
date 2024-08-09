@@ -1,9 +1,16 @@
+import NavButton from "../components/NavButton";
+
 function Rules() {
     return (
-        <div>
+        <div className="bg-gradient-to-bl from-indigo-600 to-indigo-500 text-white">
             <header>
-                <h1>About Yaniv</h1>
-                <nav>
+                <h1 className="text-5xl py-5 text-center" >About Yaniv</h1>
+                <nav className="fixed bottom-0 w-full bg-gradient-to-bl from-indigo-600 to-indigo-500">
+                    <NavButton
+                        linkTo="/pages/ScoreBoard"
+                        navText="Go to scoreboard"
+                        filled={true}
+                    />
                 </nav>
             </header>
             <main>
