@@ -2,16 +2,19 @@ import NavButton from "../components/NavButton";
 
 function Home() {
     return (
-        <header>
-            <h1>Let's play Yaniv!</h1>
-            <nav>
+        <header className="bg-gradient-to-bl from-indigo-600 to-indigo-500 flex flex-col items-center justify-center px-4 h-screen">
+            <h1 className="text-6xl text-white text-center max-w-md mx-auto">
+                Let's play Yaniv!
+            </h1>
+            <nav className="flex flex-col md:flex-row w-full justify-center mt-8 space-y-4 md:space-y-0 md:space-x-4">
+                <NavButton
+                    linkTo="/pages/ScoreBoard"
+                    navText="Go to scoreboard"
+                    filled={true}
+                />
                 <NavButton
                     linkTo="/pages/Rules"
                     navText="Learn how to play"
-                />
-                <NavButton
-                    linkTo="/pages/ScoreBoard"
-                    navText="Take me to the scoreboard"
                 />
             </nav>
         </header>
