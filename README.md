@@ -1,8 +1,23 @@
-# React + Vite
+# Yaniv Scorecard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my Yaniv Scorecard project! I designed this tool to simplify tracking scores for the card game Yaniv, allowing players to focus on the fun rather than the maths.
 
-Currently, two official plugins are available:
+## About The Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Yaniv is a card game played with a standard deck of cards, including 2 jokers. It’s a game of strategy and luck, and keeping track of scores manually can sometimes be cumbersome. I created this tool to streamline score-keeping, making it easier to focus on the game itself. Detailed instructions on how to play Yaniv are included in the project files and are also available online.
+
+## Features
+
+- **Record Scores**: Track the scores of up to 8 players, showing only the number of scorecards needed.
+- **Custom Player Names**: Personalise the scorecards with custom names for each player.
+- **Score Reduction Rule**: Automatically apply the rule to halve a player's score when they reach exactly 100 points.
+- **Asaf Rule**: Implement the Asaf rule with a button to increment a player's score by 25 points.
+- **Bust Detection**: Automatically record when a player is 'bust'.
+- **Winner Declaration**: The scorecard will automatically declare a winner based on the current scores.
+
+## Usage
+
+1. **Download or Clone**: Obtain the scorecard from this repository.
+2. **Setup**: Open the scorecard tool and input the names of the players.
+3. **Track Scores**: Update scores as the game progresses. The tool will handle score reductions, busts, and determine the winner for you.
+4. **Enjoy**: Focus on the strategy and fun of Yaniv while the scorecard takes care of the numbers!
