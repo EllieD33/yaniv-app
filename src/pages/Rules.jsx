@@ -73,7 +73,7 @@ function Rules() {
                         <h4 className="text-2xl pt-2 font-heading font-bold">Picking up cards</h4>
                         <p className="py-3">Players must pick up 1 card after they have discarded (even if they have discarded more than 1 card).</p>
                         <p className="py-3">Players can pick up a card either from the top of the face-down stack or from top of the discard pile.</p>
-                        <p className="py-3">If the previous player has laid down a set or a sequence, the current player may take either the top or bottom card from that set/sequence. Players are <b>not</b> allowed to pick up any cards from the middle of sets/sequences (for example, if the 6, 7, and 8 of Clubs were laid, only the 6 and the 8 can be picked up by the next player).</p>
+                        <p className="py-3">If the previous player has laid down a set or a sequence, the current player may take either the top or bottom card from that set/sequence. Players are <b>not</b> allowed to pick up any cards from the middle of sets/sequences (for example, if the 6, 7, and 8 of Clubs were laid, only the 6 or the 8 can be picked up by the next player).</p>
                         <p className="py-3">If a player picks up a card of the same rank as the card they just laid, they can slam that card down onto the discard pile (without having to pick up another card) as long as the next player has not yet placed their discarded card down.</p>
                         <p className="py-3">If the stack is empty before someone calls <b>"Yaniv!"</b>, the discard pile is shuffled and replaced as the stack. The last player's drop is kept out as the start of the new discard pile.</p>
                     </section>
