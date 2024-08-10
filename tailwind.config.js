@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,jsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Cantarell', 'Arial', 'sans-serif'],
+        heading: ['Fjalla One', 'serif'],
+      },
+    },
   },
   plugins: [],
 }
