@@ -5,6 +5,7 @@ import PlayerScoreCard from "../components/PlayerScoreCard";
 function ScoreBoard() {
     const [numberOfPlayers, setNumberOfPlayers] = useState(0);
     const [players, setPlayers] = useState([]);
+    const [isNumberOfPlayersVisible, setIsNumberOfPlayersVisible] = useState(true);
 
     useEffect(() => {
         if (numberOfPlayers > 0) {
@@ -15,6 +16,7 @@ function ScoreBoard() {
             status: 'active'
         }));
         setPlayers(defaultPlayerObjects);
+        setIsNumberOfPlayersVisible(false);
         }
     }, [numberOfPlayers])
 
@@ -22,7 +24,7 @@ function ScoreBoard() {
     return (
         <header>
             <h1>SCOREBOARD PAGE</h1>
-            <NumberOfPlayers setNumberOfPlayers={setNumberOfPlayers} />
+            {isNumberOfPlayersVisible && <NumberOfPlayers setNumberOfPlayers={setNumberOfPlayers} />}
             {players && players.map((player, index) => (
                 <PlayerScoreCard key={index} player={player} />
             ))
