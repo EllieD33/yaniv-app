@@ -42,12 +42,14 @@ function ScoreBoard() {
         setNumberOfPlayers(0);
         setPlayers([]);
         setIsNumberOfPlayersVisible(true);
+        setWinner("");
     }
 
     const resetScores = () => {
         players.forEach(player => {
-            const updatedPlayer = {...player, score: 0}
-            updatePlayer(updatedPlayer)
+            const updatedPlayer = {...player, score: 0};
+            updatePlayer(updatedPlayer);
+            setWinner("");
         });
     }
 
