@@ -48,7 +48,7 @@ function ScoreBoard() {
 
     const resetScores = () => {
         players.forEach(player => {
-            const updatedPlayer = {...player, score: 0};
+            const updatedPlayer = {...player, score: 0, status: 'active'};
             updatePlayer(updatedPlayer);
         });
         setTimeout(() => {            

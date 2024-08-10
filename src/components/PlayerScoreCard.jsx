@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit } from '@fortawesome/free-regular-svg-icons';
+import { FaRegEdit } from "react-icons/fa";
+import { FaRegFaceSadTear } from "react-icons/fa6";
 
 function PlayerScoreCard({ player, updatePlayer }) {
     const [playerName, setPlayerName] = useState(player.name);
@@ -68,27 +68,41 @@ function PlayerScoreCard({ player, updatePlayer }) {
     }
     
     return (
-        <section className="w-50 m-1 py-2 flex justify-center flex-col border-2 bg-indigo-50 border-indigo-100 rounded-md text-center shadow-md" >
-            <div className="flex justify-center" onDoubleClick={handleDoubleClick}>
-                {editing ? (
-                    <input type="text" value={playerName} onChange={handleNameChange} onBlur={handleBlur} autoFocus />
-                ) : (
-                    <h2 className="text-xl mr-2">{playerName}</h2>
-                )}
-                <FontAwesomeIcon icon={faEdit} />
-            </div>
-            <div className="py-2">
-                <p className="text-6xl">{player.score}</p>
-            </div>
-            <form className="py-2 mx-1">
-                <input className="p-1 border-2 border-slate-500 w-12 rounded-md" type="text" value={scoreInputValue} onChange={handleInputChange} disabled={isProcessing || player.status === 'bust'} />
-                <button className="w-16 ml-2 mt-1 bg-green-600 text-white rounded-full p-2" onClick={handleAddClick} disabled={isProcessing || player.status === 'bust'}>Add</button>
-                <button className="w-16 ml-2 mt-1 bg-indigo-600 text-white rounded-full p-2" onClick={handleAsafClick} disabled={isProcessing || player.status === 'bust'} >Asaf!</button>
-            </form>
-            <div className="py-2">
-                <button className="w-16 ml-2 bg-red-600 text-white rounded-full p-2" onClick={handleResetClick} disabled={isProcessing}>Reset</button>
-            </div>
+        <>
+        {player.status === 'active' ?
+            <section className="w-52 m-1 py-2 flex justify-center flex-col border-2 bg-indigo-50 border-indigo-100 rounded-md text-center shadow-md" >
+                <div className="flex justify-center" onDoubleClick={handleDoubleClick}>
+                    {editing ? (
+                        <input type="text" value={playerName} onChange={handleNameChange} onBlur={handleBlur} autoFocus />
+                    ) : (
+                        <h2 className="text-xl mr-2">{playerName}</h2>
+                    )}
+                    <FaRegEdit />
+                </div>
+                <div className="py-2">
+                    <p className="text-6xl">{player.score}</p>
+                </div>
+                <form className="py-2 mx-1">
+                    <input className="p-1 border-2 border-slate-500 w-12 rounded-md" type="text" value={scoreInputValue} onChange={handleInputChange} disabled={isProcessing || player.status === 'bust'} />
+                    <button className="w-16 ml-2 mt-1 bg-green-600 text-white rounded-full p-2" onClick={handleAddClick} disabled={isProcessing || player.status === 'bust'}>Add</button>
+                    <button className="w-16 ml-2 mt-1 bg-indigo-600 text-white rounded-full p-2" onClick={handleAsafClick} disabled={isProcessing || player.status === 'bust'} >Asaf!</button>
+                </form>
+                <div className="py-2">
+                    <button className="w-16 ml-2 bg-red-600 text-white rounded-full p-2" onClick={handleResetClick} disabled={isProcessing}>Reset</button>
+                </div>
+            </section>
+            :
+            <section className="w-52 m-1 py-2 flex justify-center flex-col border-2 bg-indigo-50 border-indigo-100 rounded-md text-center shadow-md" >
+                <div className="p-2 flex flex-col items-center">
+                    <p className="text-3xl">{player.name}</p>
+                    <p className="text-3xl">is BUST!</p>
+                    <FaRegFaceSadTear size={56} className="my-2 text-indigo-600" />
+                </div>
+            
         </section>
+        }
+        </>
+        
     )
 };
 
