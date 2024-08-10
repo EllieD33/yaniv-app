@@ -6,7 +6,7 @@ function Home() {
             <h1 className="text-6xl text-white text-center max-w-md mx-auto font-heading leading-snug">
                 Let's play Yaniv!
             </h1>
-            <nav className="flex flex-col md:flex-row w-full justify-center mt-8 md:space-x-4">
+            <nav className="flex flex-col md:flex-row w-full items-center justify-center mt-8 m-4">
                 <NavButton
                     linkTo="/pages/ScoreBoard"
                     navText="Go to scoreboard"
