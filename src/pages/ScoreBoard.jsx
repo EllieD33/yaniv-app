@@ -23,7 +23,6 @@ function ScoreBoard() {
     }, [numberOfPlayers]);
 
     useEffect(() => {
-        console.log('Players for winner calculation:', players); 
         const activePlayers = players.filter(player => player.status === 'active');
         if (activePlayers.length === 1){
             setWinner(activePlayers[0].name);
