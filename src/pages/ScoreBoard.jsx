@@ -37,16 +37,35 @@ function ScoreBoard() {
         })
     }
 
+    const resetBoard = () => {
+        setNumberOfPlayers(0);
+        setPlayers([]);
+        setIsNumberOfPlayersVisible(true);
+    }
+
+    const resetScores = () => {
+        players.forEach(player => {
+            const updatedPlayer = {...player, score: 0}
+            updatePlayer(updatedPlayer)
+        });
+    }
+
     return (
         <div>
             <header>
-                <h1>SCOREBOARD PAGE</h1>
+                <h1>Yaniv Scoreboard</h1>
             </header>
             <main>
                 {isNumberOfPlayersVisible && <NumberOfPlayers setNumberOfPlayers={setNumberOfPlayers} />}
                 {players && players.map((player, index) => (
-                    <PlayerScoreCard key={index} player={player} updatePlayer={updatePlayer} />
+                        <PlayerScoreCard key={index} player={player} updatePlayer={updatePlayer} />
                 ))
+                }
+                {!isNumberOfPlayersVisible && 
+                    <div>
+                        <button className="bg-indigo-600 text-white rounded-full px-3 py-1 m-2" onClick={resetBoard} >New Game</button>
+                        <button className="bg-indigo-600 text-white rounded-full px-3 py-1 m-2" onClick={resetScores} >Reset Scores</button>
+                    </div>
                 }
                 {winner && 
                     <div>
