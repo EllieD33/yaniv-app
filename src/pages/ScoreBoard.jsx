@@ -36,7 +36,7 @@ function ScoreBoard() {
                 player.id === updatedPlayer.id ? updatedPlayer : player
             );
             return newPlayers;
-        })
+        });
     }
 
     const resetBoard = () => {
@@ -50,8 +50,10 @@ function ScoreBoard() {
         players.forEach(player => {
             const updatedPlayer = {...player, score: 0};
             updatePlayer(updatedPlayer);
-            setWinner("");
         });
+        setTimeout(() => {            
+            setWinner("");
+        }, 0); 
     }
 
     return (
@@ -68,7 +70,7 @@ function ScoreBoard() {
             </header>
             <main className="flex flex-col flex-1 items-center justify-center">
                 {isNumberOfPlayersVisible && <NumberOfPlayers setNumberOfPlayers={setNumberOfPlayers} />}
-                <div className="flex flex-wrap justify-center">
+                <div className={`flex flex-wrap justify-center ${winner ? 'pointer-events-none' : ''}`}>
                     {players && players.map((player, index) => (
                             <PlayerScoreCard key={index} player={player} updatePlayer={updatePlayer} />
                     ))
