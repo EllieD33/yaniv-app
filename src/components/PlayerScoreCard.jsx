@@ -11,7 +11,8 @@ function PlayerScoreCard({ player, updatePlayer }) {
     const handleNameChange = (event) => {
         const newName = event.target.value;
         setPlayerName(newName)
-        updatePlayer({ ...player, name: newName });
+        const updatedPlayer = { ...player, name: playerName }
+        updatePlayer(updatedPlayer);
     };
 
     const handleDoubleClick = () => {

@@ -11,10 +11,11 @@ function ScoreBoard() {
     useEffect(() => {
         if (numberOfPlayers > 0) {
             const defaultPlayerNames = Array.from({ length: numberOfPlayers }, (_,i) => `Player ${i + 1}`);
-            const defaultPlayerObjects = defaultPlayerNames.map((name) => ({
-            name,
-            score: 0,
-            status: 'active'
+            const defaultPlayerObjects = defaultPlayerNames.map((name, index) => ({
+                id: index,
+                name,
+                score: 0,
+                status: 'active'
         }));
         setPlayers(defaultPlayerObjects);
         setIsNumberOfPlayersVisible(false);
@@ -22,6 +23,7 @@ function ScoreBoard() {
     }, [numberOfPlayers]);
 
     useEffect(() => {
+        console.log('Players for winner calculation:', players); 
         const activePlayers = players.filter(player => player.status === 'active');
         if (activePlayers.length === 1){
             setWinner(activePlayers[0].name);
@@ -30,9 +32,9 @@ function ScoreBoard() {
 
     const updatePlayer = (updatedPlayer) => {
         setPlayers((prevPlayers) => {
-            const newPlayers = [...prevPlayers];
-            const index = newPlayers.findIndex(player => player.name === updatedPlayer.name);
-            newPlayers[index] = updatedPlayer;
+            const newPlayers = prevPlayers.map(player =>
+                player.id === updatedPlayer.id ? updatedPlayer : player
+            );
             return newPlayers;
         })
     }
