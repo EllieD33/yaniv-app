@@ -71,7 +71,6 @@ function ScoreBoard() {
                     <div>
                         <p>{winner} wins!</p>
                     </div>
-
                 }
             </main>
         </div>

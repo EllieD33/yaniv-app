@@ -1,8 +1,26 @@
 import { useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit } from '@fortawesome/free-regular-svg-icons';
 
 function PlayerScoreCard({ player, updatePlayer }) {
+    const [playerName, setPlayerName] = useState(player.name);
+    const [editing, setEditing] = useState(false);
     const [scoreInputValue, setScoreInputValue] = useState("");
     const [isProcessing, setIsProcessing] = useState(false);
+
+    const handleNameChange = (event) => {
+        const newName = event.target.value;
+        setPlayerName(newName)
+        updatePlayer({ ...player, name: newName });
+    };
+
+    const handleDoubleClick = () => {
+        setEditing(true);
+    };
+
+    const handleBlur = () => {
+        setEditing(false);
+    };
 
     const handleInputChange = (event) => {
         setScoreInputValue(event.target.value);
@@ -50,7 +68,14 @@ function PlayerScoreCard({ player, updatePlayer }) {
     
     return (
         <section className="py-2 flex justify-center flex-col border-2 border-indigo-600 rounded-md text-center" >
-            <h2>{player.name}</h2>
+            <div className="flex justify-center" onDoubleClick={handleDoubleClick}>
+                {editing ? (
+                    <input type="text" value={playerName} onChange={handleNameChange} onBlur={handleBlur} autoFocus />
+                ) : (
+                    <h2 className="text-xl mr-2">{playerName}</h2>
+                )}
+                <FontAwesomeIcon icon={faEdit} />
+            </div>
             <div className="py-2">
                 <p className="text-6xl">{player.score}</p>
             </div>
