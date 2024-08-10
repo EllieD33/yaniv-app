@@ -6,6 +6,7 @@ function ScoreBoard() {
     const [numberOfPlayers, setNumberOfPlayers] = useState(0);
     const [players, setPlayers] = useState([]);
     const [isNumberOfPlayersVisible, setIsNumberOfPlayersVisible] = useState(true);
+    const [winner, setWinner] = useState("")
 
     useEffect(() => {
         if (numberOfPlayers > 0) {
@@ -18,7 +19,14 @@ function ScoreBoard() {
         setPlayers(defaultPlayerObjects);
         setIsNumberOfPlayersVisible(false);
         }
-    }, [numberOfPlayers])
+    }, [numberOfPlayers]);
+
+    useEffect(() => {
+        const activePlayers = players.filter(player => player.status === 'active');
+        if (activePlayers.length === 1){
+            setWinner(activePlayers[0].name);
+        }
+    }, [players])
 
     const updatePlayer = (updatedPlayer) => {
         setPlayers((prevPlayers) => {
@@ -30,15 +38,24 @@ function ScoreBoard() {
     }
 
     return (
-        <header>
-            <h1>SCOREBOARD PAGE</h1>
-            {isNumberOfPlayersVisible && <NumberOfPlayers setNumberOfPlayers={setNumberOfPlayers} />}
-            {players && players.map((player, index) => (
-                <PlayerScoreCard key={index} player={player} updatePlayer={updatePlayer} />
-            ))
+        <div>
+            <header>
+                <h1>SCOREBOARD PAGE</h1>
+            </header>
+            <main>
+                {isNumberOfPlayersVisible && <NumberOfPlayers setNumberOfPlayers={setNumberOfPlayers} />}
+                {players && players.map((player, index) => (
+                    <PlayerScoreCard key={index} player={player} updatePlayer={updatePlayer} />
+                ))
+                }
+                {winner && 
+                    <div>
+                        <p>{winner} wins!</p>
+                    </div>
 
-            }
-        </header>
+                }
+            </main>
+        </div>
     );
 }
 
