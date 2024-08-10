@@ -1,10 +1,16 @@
-function NumberOfPlayers() {
-    const handleSubmit = () => {
+import { useState } from "react";
 
+function NumberOfPlayers({ setNumberOfPlayers }) {
+    const [selection, setSelection] = useState(2);
+
+    const handleSubmit = (event) => {
+        setNumberOfPlayers(selection);
+        event.preventDefault();
     }
 
-    const handleChange = () => {
-
+    const handleChange = (event) => {
+        const { value } = event.target;
+        setSelection(parseInt(value));
     }
 
     return (

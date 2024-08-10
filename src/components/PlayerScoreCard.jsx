@@ -1,9 +1,9 @@
 function PlayerScoreCard({ player }) {
     return (
         <section className="py-2 flex justify-center flex-col border-2 border-indigo-600 rounded-md text-center" >
-            <h2>PLAYER NAME</h2>
+            <h2>{player.name}</h2>
             <div className="py-2">
-                <p className="text-6xl">0</p>
+                <p className="text-6xl">{player.score}</p>
             </div>
             <form className="py-2">
                 <input className="p-1 border-2 border-slate-500 w-12" />
