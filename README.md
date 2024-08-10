@@ -15,6 +15,12 @@ Yaniv is a card game played with a standard deck of cards, including 2 jokers. I
 - **Bust Detection**: Automatically record when a player is 'bust'.
 - **Winner Declaration**: The scorecard will automatically declare a winner based on the current scores.
 
+## Technologies Used
+
+- **JavaScript**: Core programming language.
+- **React**: Framework for building native apps using React.
+- **Tailwind**: Utility-first CSS framework for styling.
+
 ## Usage
 
 1. **Download or Clone**: Obtain the scorecard from this repository.
