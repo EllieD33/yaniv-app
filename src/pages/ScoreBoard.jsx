@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import NumberOfPlayers from "../components/NumberOfPlayers";
 import PlayerScoreCard from "../components/PlayerScoreCard";
+import NavButton from "../components/NavButton";
 
 function ScoreBoard() {
     const [numberOfPlayers, setNumberOfPlayers] = useState(0);
@@ -54,11 +55,18 @@ function ScoreBoard() {
     }
 
     return (
-        <div>
-            <header>
-                <h1>Yaniv Scoreboard</h1>
+        <div className="min-h-screen flex flex-col">
+            <header className="bg-gradient-to-bl from-indigo-600 to-indigo-500 text-white shadow-lg">
+                <h1 className="font-heading text-5xl px-2 py-4 text-center" >Yaniv Scoreboard</h1>
+                <nav className="fixed bottom-0 w-full bg-gradient-to-bl from-indigo-600 to-indigo-500 flex items-center justify-center">
+                    <NavButton
+                        linkTo="/pages/Rules"
+                        navText="How to play"
+                        filled={true}
+                    />
+                </nav>
             </header>
-            <main>
+            <main className="flex flex-1 items-center justify-center" >
                 {isNumberOfPlayersVisible && <NumberOfPlayers setNumberOfPlayers={setNumberOfPlayers} />}
                 {players && players.map((player, index) => (
                         <PlayerScoreCard key={index} player={player} updatePlayer={updatePlayer} />
