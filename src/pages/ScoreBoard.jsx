@@ -20,13 +20,21 @@ function ScoreBoard() {
         }
     }, [numberOfPlayers])
 
+    const updatePlayer = (updatedPlayer) => {
+        setPlayers((prevPlayers) => {
+            const newPlayers = [...prevPlayers];
+            const index = newPlayers.findIndex(player => player.name === updatedPlayer.name);
+            newPlayers[index] = updatedPlayer;
+            return newPlayers;
+        })
+    }
 
     return (
         <header>
             <h1>SCOREBOARD PAGE</h1>
             {isNumberOfPlayersVisible && <NumberOfPlayers setNumberOfPlayers={setNumberOfPlayers} />}
             {players && players.map((player, index) => (
-                <PlayerScoreCard key={index} player={player} />
+                <PlayerScoreCard key={index} player={player} updatePlayer={updatePlayer} />
             ))
 
             }
