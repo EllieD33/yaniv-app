@@ -2,6 +2,8 @@
 
 Welcome to my Yaniv Scorecard project! I designed this tool to simplify tracking scores for the card game Yaniv, allowing players to focus on the fun rather than the maths.
 
+You can try out the Yaniv Scorecard live at: [Yaniv Scoreboard](https://yaniv-scoreboard.netlify.app)
+
 ## About The Project
 
 Yaniv is a card game played with a standard deck of cards, including 2 jokers. It’s a game of strategy and luck, and keeping track of scores manually can sometimes be cumbersome. I created this tool to streamline score-keeping, making it easier to focus on the game itself. Detailed instructions on how to play Yaniv are included in the project files and are also available online.
