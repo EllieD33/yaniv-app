@@ -68,7 +68,7 @@ function PlayerScoreCard({ player, updatePlayer }) {
     }
     
     return (
-        <section className="py-2 flex justify-center flex-col border-2 border-indigo-600 rounded-md text-center" >
+        <section className="w-50 m-1 py-2 flex justify-center flex-col border-2 bg-indigo-50 border-indigo-100 rounded-md text-center shadow-md" >
             <div className="flex justify-center" onDoubleClick={handleDoubleClick}>
                 {editing ? (
                     <input type="text" value={playerName} onChange={handleNameChange} onBlur={handleBlur} autoFocus />
@@ -80,13 +80,13 @@ function PlayerScoreCard({ player, updatePlayer }) {
             <div className="py-2">
                 <p className="text-6xl">{player.score}</p>
             </div>
-            <form className="py-2">
-                <input className="p-1 border-2 border-slate-500 w-12" type="text" value={scoreInputValue} onChange={handleInputChange} disabled={isProcessing || player.status === 'bust'} />
-                <button className="ml-2 bg-green-600 text-white rounded-full p-2" onClick={handleAddClick} disabled={isProcessing || player.status === 'bust'}>Add</button>
-                <button className="ml-2 bg-indigo-600 text-white rounded-full p-2" onClick={handleAsafClick} disabled={isProcessing || player.status === 'bust'} >Asaf!</button>
+            <form className="py-2 mx-1">
+                <input className="p-1 border-2 border-slate-500 w-12 rounded-md" type="text" value={scoreInputValue} onChange={handleInputChange} disabled={isProcessing || player.status === 'bust'} />
+                <button className="w-16 ml-2 mt-1 bg-green-600 text-white rounded-full p-2" onClick={handleAddClick} disabled={isProcessing || player.status === 'bust'}>Add</button>
+                <button className="w-16 ml-2 mt-1 bg-indigo-600 text-white rounded-full p-2" onClick={handleAsafClick} disabled={isProcessing || player.status === 'bust'} >Asaf!</button>
             </form>
             <div className="py-2">
-                <button className="ml-2 bg-red-600 text-white rounded-full p-2" onClick={handleResetClick} disabled={isProcessing}>Reset</button>
+                <button className="w-16 ml-2 bg-red-600 text-white rounded-full p-2" onClick={handleResetClick} disabled={isProcessing}>Reset</button>
             </div>
         </section>
     )

@@ -66,12 +66,14 @@ function ScoreBoard() {
                     />
                 </nav>
             </header>
-            <main className="flex flex-1 items-center justify-center" >
+            <main className="flex flex-col flex-1 items-center justify-center">
                 {isNumberOfPlayersVisible && <NumberOfPlayers setNumberOfPlayers={setNumberOfPlayers} />}
-                {players && players.map((player, index) => (
-                        <PlayerScoreCard key={index} player={player} updatePlayer={updatePlayer} />
-                ))
-                }
+                <div className="flex flex-wrap justify-center">
+                    {players && players.map((player, index) => (
+                            <PlayerScoreCard key={index} player={player} updatePlayer={updatePlayer} />
+                    ))
+                    }
+                </div>
                 {!isNumberOfPlayersVisible && 
                     <div>
                         <button className="bg-indigo-600 text-white rounded-full px-3 py-1 m-2" onClick={resetBoard} >New Game</button>
@@ -84,6 +86,7 @@ function ScoreBoard() {
                     </div>
                 }
             </main>
+            <div className="h-24"></div>
         </div>
     );
 }
