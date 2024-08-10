@@ -57,7 +57,7 @@ function ScoreBoard() {
     return (
         <div className="min-h-screen flex flex-col">
             <header className="bg-gradient-to-bl from-indigo-600 to-indigo-500 text-white shadow-lg">
-                <h1 className="font-heading text-5xl px-2 py-4 text-center" >Yaniv Scoreboard</h1>
+                <h1 className="font-heading text-5xl px-2 py-5 text-center" >Yaniv Scoreboard</h1>
                 <nav className="fixed bottom-0 w-full bg-gradient-to-bl from-indigo-600 to-indigo-500 flex items-center justify-center">
                     <NavButton
                         linkTo="/pages/Rules"
@@ -74,19 +74,19 @@ function ScoreBoard() {
                     ))
                     }
                 </div>
-                {!isNumberOfPlayersVisible && 
-                    <div>
-                        <button className="bg-indigo-600 text-white rounded-full px-3 py-1 m-2" onClick={resetBoard} >New Game</button>
-                        <button className="bg-indigo-600 text-white rounded-full px-3 py-1 m-2" onClick={resetScores} >Reset Scores</button>
+                {winner && 
+                    <div className="mt-4">
+                        <p className="text-3xl font-heading" >{winner} wins!</p>
                     </div>
                 }
-                {winner && 
-                    <div>
-                        <p>{winner} wins!</p>
+                {!isNumberOfPlayersVisible && 
+                    <div className="m-2">
+                        <button className="border-2 border-indigo-600 bg-indigo-600 text-white rounded-full px-3 py-2 m-2" onClick={resetBoard} >New Game</button>
+                        <button className="border-2 border-red-600 text-red-700 rounded-full px-3 py-2 m-2" onClick={resetScores} >Reset Scores</button>
                     </div>
                 }
             </main>
-            <div className="h-24"></div>
+            <div className="h-28"></div>
         </div>
     );
 }
