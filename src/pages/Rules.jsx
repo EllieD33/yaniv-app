@@ -3,7 +3,7 @@ import NavButton from "../components/NavButton";
 function Rules() {
     return (
         <div>
-            <header className="bg-gradient-to-bl from-indigo-600 to-indigo-500 text-white shadow-lg">
+            <header className="bg-gradient-to-bl from-indigo-700 to-indigo-600 text-white shadow-lg">
                 <h1 className="text-5xl py-5 text-center font-heading">Yaniv</h1>
                 <nav className="fixed bottom-0 w-full bg-gradient-to-bl from-indigo-600 to-indigo-500 flex items-center justify-center">
                     <NavButton
@@ -36,7 +36,7 @@ function Rules() {
                     <section className="my-2">
                         <h3 className="text-3xl pt-2 font-heading font-bold">Gameplay</h3>
                         <p className="py-3">The play proceeds clockwise. For the first round play begins with the person to the dealer's left and in subsequent rounds the winner of the previous round goes first.</p>
-                        <div className="p-4 bg-indigo-500 text-white rounded-md max-w-screen-sm mx-auto">
+                        <div className="p-4 bg-indigo-600 text-white rounded-md max-w-screen-sm mx-auto">
                             <p className="pb-3 font-semibold">To take their go, players can either:</p>
                             <ul className="list-disc list-outside ml-6 space-y-2">
                                 <li>Discard a card, or set of cards, and pick up a new card.</li>
@@ -50,7 +50,7 @@ function Rules() {
                     <section className="my-2">
                         <h4 className="text-2xl pt-2 font-heading font-bold">Discarding cards</h4>
                         <p className="py-3">Players must discard BEFORE they pick up. Discarded cards are added face-up to the top of the discard pile.</p>
-                        <div className="p-4 bg-indigo-500 text-white rounded-md max-w-screen-sm mx-auto">
+                        <div className="p-4 bg-indigo-600 text-white rounded-md max-w-screen-sm mx-auto">
                             <p className="mb-2 font-semibold">Players can discard the following:</p>
                             <ul className="list-disc list-outside ml-6 space-y-2">
                                 <li>Any one card.</li>
@@ -89,7 +89,7 @@ function Rules() {
                         <h4 className="text-2xl pt-2 font-heading font-bold">Scoring a round</h4>
                         <p className="py-3">The person with the lowest scoring hand is the winner of the round.</p>
                         <p className="py-3 font-semibold">Cards are valued as follows: </p>
-                        <div className="p-3 bg-indigo-500 text-white rounded-md max-w-screen-sm mx-auto">
+                        <div className="p-3 bg-indigo-600 text-white rounded-md max-w-screen-sm mx-auto">
                             <dl className="grid grid-cols-2">
                                 <dt className="pb-3" >Jokers</dt>
                                 <dd>0</dd>
@@ -118,7 +118,7 @@ function Rules() {
                         <h4 className="text-2xl pt-2 font-heading font-bold">Ending the game</h4>
                         <p className="py-3">A total score tally is kept for each round.</p>
                         <p className="py-3">Once a player's score <strong>exceeds</strong> 100 points, they are out of the game. If a player's score lands on exactly 100 points, their score is halved to 50 points and they can continue to play from that score.</p>
-                        <p className="p-3 bg-indigo-500 text-white rounded-md text-center max-w-screen-sm mx-auto">The winner of the game is the last remaining player.</p>
+                        <p className="p-3 bg-indigo-600 text-white rounded-md text-center max-w-screen-sm mx-auto">The winner of the game is the last remaining player.</p>
                     </section>
                     <div className="h-6"></div>
                 </article>
