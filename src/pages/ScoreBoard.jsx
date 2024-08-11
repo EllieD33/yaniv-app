@@ -77,7 +77,7 @@ function ScoreBoard() {
                     }
                 </div>
                 {winner && 
-                    <div className="mt-4">
+                    <div aria-live="polite" className="mt-4">
                         <p className="text-3xl font-heading" >{winner} wins!</p>
                     </div>
                 }
