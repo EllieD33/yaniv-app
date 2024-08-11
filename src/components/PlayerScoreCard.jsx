@@ -85,7 +85,7 @@ function PlayerScoreCard({ player, updatePlayer }) {
                     </div>
                 </div>
                 <div className="py-2">
-                    <p className="text-6xl"  aria-live="polite">{player.score}</p>
+                    <p className="text-6xl" aria-live="polite">{player.score}</p>
                 </div>
                 <form className="py-2 mx-1">
                     <label htmlFor={`score-input-${player.name}`} className="sr-only">Score Input</label>
@@ -99,7 +99,7 @@ function PlayerScoreCard({ player, updatePlayer }) {
             </section>
             :
             <section className="w-52 m-1 py-2 flex justify-center flex-col border-2 bg-indigo-50 border-indigo-100 rounded-md text-center shadow-md" >
-                <div className="p-2 flex flex-col items-center">
+                <div aria-live="polite" className="p-2 flex flex-col items-center">
                     <p className="text-3xl">{player.name}</p>
                     <p className="text-3xl">is BUST!</p>
                     <FaRegFaceSadTear size={56} className="my-2 text-indigo-600" aria-hidden="true" />
