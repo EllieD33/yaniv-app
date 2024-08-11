@@ -7,7 +7,16 @@ function ScoreBoard() {
     const [numberOfPlayers, setNumberOfPlayers] = useState(0);
     const [players, setPlayers] = useState([]);
     const [isNumberOfPlayersVisible, setIsNumberOfPlayersVisible] = useState(true);
-    const [winner, setWinner] = useState("")
+    const [winner, setWinner] = useState("");
+
+    useEffect(() => {
+        const savedPlayers = localStorage.getItem('yanivPlayers');
+    
+        if (savedPlayers) {
+            setPlayers(JSON.parse(savedPlayers));
+            setIsNumberOfPlayersVisible(false);
+        }
+    }, []);
 
     useEffect(() => {
         if (numberOfPlayers > 0) {
@@ -24,6 +33,10 @@ function ScoreBoard() {
     }, [numberOfPlayers]);
 
     useEffect(() => {
+        if (players.length > 0) {
+            localStorage.setItem('yanivPlayers', JSON.stringify(players));
+        }
+
         const activePlayers = players.filter(player => player.status === 'active');
         if (activePlayers.length === 1){
             setWinner(activePlayers[0].name);
@@ -44,6 +57,8 @@ function ScoreBoard() {
         setPlayers([]);
         setIsNumberOfPlayersVisible(true);
         setWinner("");
+        localStorage.removeItem('yanivPlayers');
+        localStorage.removeItem('yanivNumberOfPlayers');
     }
 
     const resetScores = () => {
