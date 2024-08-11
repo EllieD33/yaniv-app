@@ -102,7 +102,7 @@ function PlayerScoreCard({ player, updatePlayer }) {
                 <div className="p-2 flex flex-col items-center">
                     <p className="text-3xl">{player.name}</p>
                     <p className="text-3xl">is BUST!</p>
-                    <FaRegFaceSadTear size={56} className="my-2 text-indigo-600" />
+                    <FaRegFaceSadTear size={56} className="my-2 text-indigo-600" aria-hidden="true" />
                 </div>
             
         </section>
