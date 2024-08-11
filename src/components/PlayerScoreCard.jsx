@@ -71,9 +71,9 @@ function PlayerScoreCard({ player, updatePlayer }) {
         <>
         {player.status === 'active' ?
             <section className="w-52 m-1 py-2 flex justify-center flex-col border-2 bg-indigo-50 border-indigo-100 rounded-md text-center shadow-md" >
-                <div className="flex justify-center" onDoubleClick={handleDoubleClick}>
+                <div className="flex justify-center px-1" onDoubleClick={handleDoubleClick}>
                     {editing ? (
-                        <input type="text" value={playerName} onChange={handleNameChange} onBlur={handleBlur} autoFocus />
+                        <input className="max-w-full" type="text" value={playerName} onChange={handleNameChange} onBlur={handleBlur} autoFocus />
                     ) : (
                         <h2 className="text-xl mr-2">{playerName}</h2>
                     )}
