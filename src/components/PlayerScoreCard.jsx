@@ -71,13 +71,18 @@ function PlayerScoreCard({ player, updatePlayer }) {
         <>
         {player.status === 'active' ?
             <section className="w-52 m-1 py-2 flex justify-center flex-col border-2 bg-indigo-50 border-indigo-100 rounded-md text-center shadow-md" >
-                <div className="flex justify-center px-1" onDoubleClick={handleDoubleClick}>
-                    {editing ? (
-                        <input className="max-w-full" type="text" value={playerName} onChange={handleNameChange} onBlur={handleBlur} autoFocus />
-                    ) : (
-                        <h2 className="text-xl mr-2">{playerName}</h2>
-                    )}
-                    <FaRegEdit />
+                <div className="flex justify-center px-1" onDoubleClick={handleDoubleClick} role="button" aria-label={editing ? "Editing name" : "Double click to edit name"}>
+                    <div className="relative flex items-center group">
+                        {editing ? (
+                            <input className="max-w-full" type="text" value={playerName} onChange={handleNameChange} onBlur={handleBlur} autoFocus />
+                        ) : (
+                            <h2 className="text-xl mr-2">{playerName}</h2>
+                        )}
+                        <FaRegEdit />
+                        <span className="absolute top-full -mt-3 left-1/2 transform -translate-x-1/2 mb-1 w-max px-2 py-1 text-xs text-white bg-black rounded opacity-0 transition-opacity duration-200 hover:opacity-100">
+                            Double click to edit
+                        </span>
+                    </div>
                 </div>
                 <div className="py-2">
                     <p className="text-6xl">{player.score}</p>
