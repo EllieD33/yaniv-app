@@ -89,7 +89,7 @@ function PlayerScoreCard({ player, updatePlayer }) {
                 </div>
                 <form className="py-2 mx-1">
                     <label htmlFor={`score-input-${player.name}`} className="sr-only">Score Input</label>
-                    <input className="p-1 border-2 border-slate-500 w-12 rounded-md" type="text" value={scoreInputValue} onChange={handleInputChange} disabled={isProcessing || player.status === 'bust'} />
+                    <input id={`score-input-${player.name}`} className="p-1 border-2 border-slate-500 w-12 rounded-md" type="text" value={scoreInputValue} onChange={handleInputChange} disabled={isProcessing || player.status === 'bust'} />
                     <button className="w-16 ml-2 mt-1 bg-green-600 text-white rounded-full p-2" onClick={handleAddClick} disabled={isProcessing || player.status === 'bust'}>Add</button>
                     <button className="w-16 ml-2 mt-1 bg-indigo-600 text-white rounded-full p-2" onClick={handleAsafClick} disabled={isProcessing || player.status === 'bust'} >Asaf!</button>
                 </form>
