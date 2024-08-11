@@ -85,7 +85,7 @@ function PlayerScoreCard({ player, updatePlayer }) {
                     </div>
                 </div>
                 <div className="py-2">
-                    <p className="text-6xl">{player.score}</p>
+                    <p className="text-6xl"  aria-live="polite">{player.score}</p>
                 </div>
                 <form className="py-2 mx-1">
                     <label htmlFor={`score-input-${player.name}`} className="sr-only">Score Input</label>
